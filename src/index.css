@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.featureCard {
+  border-radius: 0.82006rem;
+  background: #FFF;
+  box-shadow: 0px 4px 74px 0px rgba(43, 150, 111, 0.50);
+}
+
+.footer-link {
+  font-size: 0.75rem;
+  color: #333333;
+}
+
+input {
+  outline: none;
+}
+
+.dropdownStyle {
+  background: transparent;
+  border-radius: 0.75rem;
+  border-color: #555555;
+  border-width: 2px;
+  margin-top: 0.5rem;
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 5000;
+  }
+}
+body, html {
+  overflow-x: hidden;  /* Prevent horizontal overflow on the page */
+  width: 100%;          /* Ensure the page width is set to 100% */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.input-field {
+  @apply border-2 bg-transparent border-gray rounded-xl py-2 px-6 w-full focus:outline-primary-400 focus:scale-105 transition-transform duration-300;
+}
+
+/* Add any other custom styles or overrides here */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Container for scrolling logos */
+.scroll-container {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: max-content; /* Allows container to expand with logos */
+  overflow: hidden;  /* Ensures logos that move out of view are not visible */
+  justify-content: flex-start;  /* Ensure logos align to the left */
+}
+
+/* Individual logo wrapper */
+.logo-wrapper {
+  flex-shrink: 0;
+  margin: 0 1rem; /* Adds spacing between logos */
+}
+
+/* Logo size */
+.logo {
+  width: 120px; /* Adjust the size as needed */
+  height: 120px; /* Keep the aspect ratio of the SVG */
+  object-fit: contain; /* Ensures SVG scales nicely */
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;  /* Reduce size for mobile */
+    height: 80px; /* Ensure logos maintain their aspect ratio */
+  }
+
+  .scroll-container {
+    width: max-content;
+    justify-content: space-between; /* Ensures space between logos */
+  }
+}
